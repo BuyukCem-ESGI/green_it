@@ -1,0 +1,21 @@
+{
+  "accèsAuxInterfacesNumeriques": {
+    "TauxDeCouvertureInternet": "2%",
+    "TauxDeCouvertureMobile": "3%",
+    "TauxDePauvreté": "3%",
+    "MedianeRevenu": "23€"
+  },
+  "accèsALinformation": {
+    "PartDeMenagesUnePersonne": "3%",
+    "PartDesFamillesMonoparentales": "34%",
+    "ServicesPublics": 3
+  },
+  "competencesAdministratives": {
+    "Part_15_29": "34%",
+    "PartChomeurs": "43%"
+  },
+  "competencesNumeriques": {
+    "Part_65_et_plus": "2%",
+    "PartPersonneSansDiplomes": "32%"
+  }
+}
