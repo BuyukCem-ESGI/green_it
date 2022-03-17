@@ -7,13 +7,3 @@ exports.fragilite = function (city_name) {
         }
     });
 };
-
-exports.getCity = function (city_name) {
-
-
-    return data.find(function (element) {
-        if (element.Nom_com === city_name) {
-            return element
-        }
-    });
-};
