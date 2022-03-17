@@ -5,6 +5,7 @@ const xss = require('xss-clean');
 const express = require('express');
 const dotenv = require('dotenv');
 const app = express();
+const fragilite = require('./Controller/fragilite.Controller');
 
 dotenv.config();
 app.use(express.json());
@@ -14,8 +15,13 @@ app.use(xss());
 app.use(cors());
 
 app.get('/', function (req, res) {
-  console.log('GET /');
-  res.send('GET request to the homepage');
+  const city = req.query.city;
+  if(city == null || city.length === 0){
+    res.send({
+      error: 'City is not valid'
+    });
+  }
+  res.send(fragilite.fragilite(city));
 });
 
 const normalizePort = (val) => {

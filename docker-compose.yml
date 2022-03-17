@@ -4,7 +4,6 @@ services:
   backend:
     image: node:lts
     working_dir: /app
-    env_file: .env
     container_name: backend
     volumes:
       - ./backend:/app
