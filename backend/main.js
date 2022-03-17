@@ -1,4 +1,3 @@
-const bodyParser = require('body-parser');
 const cors = require('cors');
 const http = require('http');
 const xss = require('xss-clean');

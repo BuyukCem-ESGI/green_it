@@ -1,4 +1,3 @@
-const main = require("./../main.js");
 const data = require("./../data/data.json");
 
 exports.fragilite = function (city_name) {
