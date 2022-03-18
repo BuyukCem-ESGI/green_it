@@ -2,8 +2,19 @@ const cors = require('cors');
 const http = require('http');
 const xss = require('xss-clean');
 const express = require('express');
+const {engine} = require('express-handlebars');
 const dotenv = require('dotenv');
 const app = express();
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: true} ));
+app.use(bodyParser.json())
+// app.use(express.static(path.join(__dirname, '/public')));
+
+app.engine('hbs', engine());
+app.set('view engine', 'hbs');
+app.set("views", "./views");
+
 const fragilite = require('./Controller/fragilite.Controller');
 
 dotenv.config();
@@ -15,14 +26,23 @@ app.use(cors());
 
 app.post('/', function (req, res) {
   const city = req.body.city;
-  if(city == null || city.length === 0){
-    res.render('views/index', { error: 'City is not valid'});
+  if (city == null || city.length === 0) {
+    res.render('home', { error: 'City is not valid' });
   }
-  res.render('views/index', fragilite.fragilite(city));
+  console.log(fragilite.fragilite(city));
+  res.render('home',{
+    'res':fragilite.fragilite(city),
+    'scripts': [{ script: './data/city.js' }]
+  })
+  
+});
+
+app.get("/data/city", function (req, res) {
+  res.sendFile(__dirname + "/data/city.js");
 });
 
 app.get('/', function (req, res) {
-  res.render('views/index', );
+  res.render('home', {scripts: [{ script: './data/city.js' }]});
 });
 
 const normalizePort = (val) => {
