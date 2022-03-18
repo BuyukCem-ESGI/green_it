@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica", sans-serif;
+  font-size: 1.2em;
+  background-color: #71c7ec;
+}
+
+.flex {
+  display: flex;
+}
+h1, h2 {
+  text-align: center;
+}
+
+h1 {
+  margin: 2rem 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-text {
+  width: 89%;
+  border-radius: .5rem;
+  height: 2.5rem;
+  border: 1px solid #CACACA;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  font-size: 1em;
+  position: relative;
+}
+
+.container-form {
+  margin-left: 2rem;
+}
+
+.btn-submit {
+  width: 90%;
+  height: 2.5rem;
+  margin-top: .2rem;
+  background-color: #0088cc;
+  color: #FFF;
+  border-radius: .5rem;
+  border: none;
+  font-size: 1em;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  cursor: pointer;
+}
+
+.overflow-list {
+  position: absolute;
+  top: 13rem;
+  width: 24.5rem;
+  max-height: 70vh;
+  overflow-y: auto;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 1rem 2rem;
+  z-index: 10;
+  background-color: #FFF;
+}
+
+.card {
+  width: 40rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin-top: 2rem;
+  border-radius: .5rem;
+  background-color: #005073;
+}
+
+.card p {
+  padding: 0 1rem;
+}
+
+.card h3 {
+  color: #FFF;
+  margin-left: 1rem;
+  text-decoration: underline;
+}
+
+.info {
+  font-style: italic;
+}
+
+.card-body {
+  background-color: #107dac;
+  padding: 1rem;
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+  text-align: center;
+}
+
+.card-body h2, p {
+  color: #FFF;
+}
+
+.items {
+  margin: .5rem 0;
+  cursor: pointer;
+}
