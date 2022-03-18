@@ -29,12 +29,11 @@ app.post('/', function (req, res) {
   if (city == null || city.length === 0) {
     res.render('home', { error: 'City is not valid' });
   }
-  console.log(fragilite.fragilite(city));
   res.render('home',{
     'res':fragilite.fragilite(city),
     'scripts': [{ script: './data/city.js' }]
   })
-  
+
 });
 
 app.get("/data/city", function (req, res) {
