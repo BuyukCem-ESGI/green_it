@@ -13,14 +13,16 @@ app.use(express.urlencoded({ extended: true }));
 app.use(xss());
 app.use(cors());
 
-app.get('/', function (req, res) {
-  const city = req.query.city;
+app.post('/', function (req, res) {
+  const city = req.body.city;
   if(city == null || city.length === 0){
-    res.send({
-      error: 'City is not valid'
-    });
+    res.render('views/index', { error: 'City is not valid'});
   }
-  res.send(fragilite.fragilite(city));
+  res.render('views/index', fragilite.fragilite(city));
+});
+
+app.get('/', function (req, res) {
+  res.render('views/index', );
 });
 
 const normalizePort = (val) => {
