@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(xss());
 app.use(cors());
 
-app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static(path.join(__dirname, '/public/')));
 
 app.post('/', function (req, res) {
   const city = req.body.city;
@@ -33,7 +33,7 @@ app.post('/', function (req, res) {
   }
   console.log(fragilite.fragilite(city));
   res.render('home',{
-    'res':fragilite.fragilite(city),
+    'res': fragilite.fragilite(city),
     'scripts': [{ script: './data/city.js' }]
   })
   

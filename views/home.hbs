@@ -1,24 +1,28 @@
-<div class="container d-flex">
-  <form class="d-flex" autocomplete="off" id='demoForm' action="/" method="POST">
-    <fieldset>
-      <legend>Indice de Fragilité Numérique</legend>
-      <table id='regDetails'>
-        <tr>
-          <td><label for='city'>Ville</label></td>
-          <td><input type='text' id='city' name='city' /></td>
-        </tr>
-        <tr>
-          <td colspan='2'><input type='submit' id='submitButton' /></td>
-        </tr>
-      </table>
-    </fieldset>
+<div>
+  <h1>Indice de Fragilité Numérique</h1>
+  <form autocomplete="off" id='demoForm' action="/" method="POST">
+    <section class="">
+      <div class="container-form">
+        <input type='text' id='city' name='city' placeholder="Exemple: paris" class="input-text" />
+        <input type='submit' value="Rechercher" id='submitButton' class="btn-submit" />
+      </div>
+    </section>
   </form>
 </div>
 
 {{#if res}}
-<p>Le score global de la ville {{res.Nom_com}} est: {{res.Score_Global_epci_1}}</p>
-<p>Le score global de la région est: {{res.Score_Global_Region}}</p>
-<p>Le score global de la région est: {{res.Score_Global_departement_1}}</p>
+<div class="card">
+  <div class="card-body">
+    <h2>IFN {{res.Nom_com}}:</h2>
+    <p>{{res.Score_Global_departement_1}}</p>
+  </div>
+  <h3>Axes:</h3>
+  <p>Accès information: {{res.access_information_epci_1}}</p>
+  <p>Accès interface numériques: {{res.Acces_aux_interfaces_numeriques_epci_1}}</p>
+  <p>Compétences administratives: {{res.Comeptences_Administratifs_epci_1}}</p>
+  <p>Compétences numériques: {{res.Competences_numeriques_scolaires_epci_1}}</p>
+  <p class="info">/!\ Les axes affichés correspondent à ceux de la ville, et afin d'obtenir l'indice de fragilité numérique (IFN) de {{res.Nom_com}}, ces axes ont été aussi calculés en fonction du département ainsi que de la region de la ville concernée !</p>
+</div>
 {{/if}}
 
 <script>
@@ -36,7 +40,7 @@
       /*create a DIV element that will contain the items (values):*/
       a = document.createElement("DIV");
       a.setAttribute("id", this.id + "autocomplete-list");
-      a.setAttribute("class", "autocomplete-items");
+      a.setAttribute("class", "autocomplete-items overflow-list");
       /*append the DIV element as a child of the autocomplete container:*/
       this.parentNode.appendChild(a);
       /*for each item in the array...*/
@@ -45,6 +49,7 @@
         if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
           /*create a DIV element for each matching element:*/
           b = document.createElement("DIV");
+          b.setAttribute("class", "items");;
           /*make the matching letters bold:*/
           b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
           b.innerHTML += arr[i].substr(val.length);
