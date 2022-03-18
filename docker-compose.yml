@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  backend:
+    image: node:lts
+    working_dir: /app
+    container_name: backend
+    volumes:
+      - ./:/app
+    ports:
+      - '3001:3000'
+    command: sh -c "npm i && npm run start:dev"

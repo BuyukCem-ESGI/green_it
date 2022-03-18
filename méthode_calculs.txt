@@ -1,4 +1,0 @@
-// CALCULS
-Taux de pauvreté = 60% de la Médiane du niveau de vie
-Taux d'équipement ménages = nombre de ménages ou d’individus équipés du bien divisé par le nombre total de ménages ou d’individus.
-
