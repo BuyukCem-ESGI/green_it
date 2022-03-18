@@ -5,11 +5,11 @@ const express = require('express');
 const {engine} = require('express-handlebars');
 const dotenv = require('dotenv');
 const app = express();
+const path = require('path');
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true} ));
 app.use(bodyParser.json())
-// app.use(express.static(path.join(__dirname, '/public')));
 
 app.engine('hbs', engine());
 app.set('view engine', 'hbs');
@@ -23,6 +23,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(xss());
 app.use(cors());
+
+app.use(express.static(path.join(__dirname, '/public')));
 
 app.post('/', function (req, res) {
   const city = req.body.city;

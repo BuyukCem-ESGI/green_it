@@ -1,17 +1,19 @@
-<form autocomplete="off" id='demoForm' action="/" method="POST">
-  <fieldset>
-    <legend>Indice de Fragilité Numérique</legend>
-    <table id='regDetails'>
-      <tr>
-        <td><label for='city'>Ville</label></td>
-        <td><input type='text' id='city' name='city' /></td>
-      </tr>
-      <tr>
-        <td colspan='2'><input type='submit' id='submitButton' /></td>
-      </tr>
-    </table>
-  </fieldset>
-</form>
+<div class="container d-flex">
+  <form class="d-flex" autocomplete="off" id='demoForm' action="/" method="POST">
+    <fieldset>
+      <legend>Indice de Fragilité Numérique</legend>
+      <table id='regDetails'>
+        <tr>
+          <td><label for='city'>Ville</label></td>
+          <td><input type='text' id='city' name='city' /></td>
+        </tr>
+        <tr>
+          <td colspan='2'><input type='submit' id='submitButton' /></td>
+        </tr>
+      </table>
+    </fieldset>
+  </form>
+</div>
 
 {{#if res}}
 <p>Le score global de la ville {{res.Nom_com}} est: {{res.Score_Global_epci_1}}</p>
